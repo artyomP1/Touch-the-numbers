@@ -1,0 +1,24 @@
+.right {
+    background-color:gold;
+}
+
+.board {
+    height: 300px;
+    width: 300px;
+    background-color:gray;
+    border: solid 2px darkblue;
+    float: center;
+}
+
+.num{
+    font-size: 20px;
+    text-align: center;
+}
+
+.level {
+    left: 10%;
+}
+
+#timer {
+    font-size: 20px;
+}
