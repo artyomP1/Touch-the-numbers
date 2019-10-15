@@ -1,26 +1,36 @@
-
 'use trict'
 var gNums;
 var gNextNum = 1;
-var gEasy = 'Easy 16', gMedium = 'Medium 25', gHard = 'Hard 36';
-var gLevel = gEasy;
-var gMat;
+var gElLevel = 'Medium 25';
+
+var gLevel = gElLevel;
+var gMat = 5;
 var gInterval;
 
 function init() {
-    chooseLevel(gLevel);
+    updateLevel();
     nextNum(gNextNum);
     renderbord();
 }
 
-function chooseLevel(gLevel) {
-    if (gLevel === gEasy) {
+function chooseLevel(level) {
+    if (level === 'Easy') {
+        gElLevel = 'Easy 16';
         gMat = 4;
-    } else if (gLevel === gMedium) {
+    } else if (level === 'Medium') {
+        gElLevel = 'Medium 25';
         gMat = 5;
     } else {
+        gElLevel = 'Hard 36';
         gMat = 6;
     }
+    var elLevel = document.querySelector('.level');
+    elLevel.innerText = 'Level:' + gLevel;
+    stopTimer();
+    init();
+}
+
+function updateLevel() {
     var elLevel = document.querySelector('.level');
     elLevel.innerText = 'Level:' + gLevel;
 }
@@ -76,6 +86,7 @@ function resetNums() {
     }
     shuffle(gNums);
 }
+
 function drawNum() {
     return gNums.pop();
 }
@@ -101,7 +112,7 @@ function getRandomInt(min, max) {
 
 function timeStart() {
     var startTime = Date.now();
-    gInterval = setInterval(function () {
+    gInterval = setInterval(function() {
         var elapsedTime = Date.now() - startTime;
         document.getElementById("timer").innerHTML = (elapsedTime / 1000).toFixed(3);
     }, 100);

@@ -6,21 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/touch-nums.css">
-    <title>Document</title>
+    <title>Touch nums</title>
 </head>
 
 <body onload="init()">
+    <main class="main">
+        <h1 class="Touch-nums"> Touch nums </h1>
+        <h2 class="level"></h2>
+        <button class="easy" onclick="chooseLevel('Easy')">Easy</button>
+        <button class="medium" onclick="chooseLevel('Medium')">Medium</button>
+        <button class="hard" onclick="chooseLevel('Hard')">Hard</button>
+        <h3 class="nextnum"></h3>
+        <table class="board">
+            <tbody class="board">
 
+            </tbody>
+        </table>
 
-    <h1 class="level">------</h1>
-    <h2 class="nextnum"></h2>
-    <table class="board" border="1">
-        <tbody class="board">
-
-        </tbody>
-    </table>
-
-    <div id="timer"></div>
+        <div id="timer"></div>
+    </main>
     <script src="js/touch-nums.js"></script>
 </body>
 
